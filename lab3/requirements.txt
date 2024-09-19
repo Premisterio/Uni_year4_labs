@@ -1,0 +1,11 @@
+deep-translator          1.11.4
+google-api-core          2.19.2
+google-auth              2.34.0
+google-cloud-core        2.4.1
+google-cloud-translate   3.16.0
+googleapis-common-protos 1.65.0
+googletrans              3.0.0
+grpc-google-iam-v1       0.13.1
+langdetect               1.0.9
+pip                      24.2
+translators              5.9.2

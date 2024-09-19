@@ -1,0 +1,6 @@
+text.txt
+uk
+file
+600
+100
+10
