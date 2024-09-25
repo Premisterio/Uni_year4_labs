@@ -24,10 +24,12 @@ def count_by_gender(employees):
 
 #  Розподіл співробітників за статевою та віковою категорією
 def count_by_age_category(employees):
-    younger_18 = sum(1 for emp in employees if emp['age'] < 18)
-    age_18_45 = sum(1 for emp in employees if 18 <= emp['age'] <= 45)
-    age_46_70 = sum(1 for emp in employees if 46 <= emp['age'] <= 70)
-    older_70 = sum(1 for emp in employees if emp['age'] > 70)
+    younger_18, age_18_45, age_46_70, older_70 = (
+        sum(1 for emp in employees if emp['age'] < 18),
+        sum(1 for emp in employees if 18 <= emp['age'] <= 45),
+        sum(1 for emp in employees if 46 <= emp['age'] <= 70),
+        sum(1 for emp in employees if emp['age'] > 70)
+    )
 
     print(f"Кількість молодших 18 років: {younger_18}")
     print(f"Кількість 18-45 років: {age_18_45}")
@@ -87,5 +89,3 @@ employees = read_csv_file(csv_file_path)
 count_by_gender(employees)
 count_by_age_category(employees)
 count_by_gender_and_age(employees)
-
-
