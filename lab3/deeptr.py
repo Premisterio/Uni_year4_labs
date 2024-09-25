@@ -1,8 +1,14 @@
-from translation_package.mod2 import TransLate, LangDetect
+from translation_package.mod2 import TransLate, LangDetect, CodeLang
 
-# Перевірка функцій другого модуля
-# Викорисатння функції TransLate()
-print(TransLate("Hello, what is the current situation on the frontline", "en", "uk"))
+# Використання функції TransLate()
+translated_text = TransLate("Hello, what is the current situation on the frontline", "en", "uk")
+print(translated_text)
+
 # Використання функції LangDetect() для визначення мови
-print(LangDetect("Hello, what is the current situation on the frontline"))
+detected_language_info = LangDetect("Hello, what is the current situation on the frontline")
+print(detected_language_info)
 
+# Отримання коду мови з інформації про мову
+detected_language = LangDetect("Hello, what is the current situation on the frontline", set="lang")
+language_code = CodeLang(detected_language)
+print(language_code)

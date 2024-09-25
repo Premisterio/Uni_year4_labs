@@ -24,3 +24,25 @@ def LangDetect(text: str, set: str = "all") -> str:
             return " | ".join(lang_conf_pairs)
     except Exception as e:
         return f"Error: {e}"
+
+
+# Функція що повертає код мови або назву мови
+def CodeLang(lang: str) -> str:
+    lang_dict = {
+        "en": "English", "uk": "Ukrainian", "de": "German", "fr": "French", "es": "Spanish"
+    }
+    try:
+        # If input is a language code
+        lang = lang.lower()
+        if lang in lang_dict:
+            return lang_dict[lang]
+
+        # If input is a language name
+        for code, name in lang_dict.items():
+            if lang.capitalize() == name:
+                return code
+
+        return "Language not found"
+    except Exception as e:
+        return f"Error: {e}"
+
