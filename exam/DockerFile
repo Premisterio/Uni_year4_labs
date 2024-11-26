@@ -1,0 +1,19 @@
+FROM python:3.12.5
+
+# Створення директорії для програми
+RUN mkdir /app
+
+# Встановлення бібліотеки deep-translator та інші залежності
+RUN pip install --no-cache-dir deep-translator
+
+# Встановлення робочої директорії
+WORKDIR /app
+
+# Копіювання всіх файлів програми в контейнер
+COPY . /app
+
+# Встановлення робочої директорії
+WORKDIR /app
+
+# Запуск програми
+CMD ["python", "main.py"]
